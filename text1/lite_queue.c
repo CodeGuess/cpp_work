@@ -37,22 +37,22 @@ char lite_queue_dequeue(LiteQueuePtr* ptr)
 {
 	assert(ptr != 0 && (*ptr) != 0 && (*ptr)->size != 0);
 
-	//char ret = (*ptr)->data[0];
+	char ret = (*ptr)->data[(*ptr)->size -1];
 	
-	
-	char* pdata = malloc((*ptr)->capacity);
 	/*
+	char* pdata = malloc((*ptr)->capacity);
+	
 	memcpy(pdata, (*ptr)->data + 1, (*ptr)->size - 1);//相当于去掉第一个值后复制
-	*/
+	
 	memcpy(pdata, (*ptr)->data, (*ptr)->size - 2);
 	free((*ptr)->data);//释放指针
 	(*ptr)->data = pdata;//把新的数据付给指针
-	
+	*/
 	//memmove((*ptr)->data, (*ptr)->data + 1, (*ptr)->size - 1);
 
 	(*ptr)->size -= 1;
 
-	//return ret;
+	return ret;
 }
 
 bool lite_queue_empty(LiteQueuePtr queue)
