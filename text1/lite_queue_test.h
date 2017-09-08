@@ -7,13 +7,13 @@
 
 void instructions(void);
 
-void printElement(char data)
+void printElement(char data)//定义一个输出函数
 {
 	printf("%c ", data);
 }
 int main()
 {
-	LiteQueuePtr pQueue = 0;
+	LiteQueuePtr pQueue = 0; //定义一个LiteQueuePtr类型的变量pQueue为0
 
 	char item;
 
@@ -68,7 +68,7 @@ int main()
 	return 0;
 }
 
-void instructions(void)
+void instructions(void) //定义输出内容
 {
 	printf("Enter your choice:\n"
 		"   1 to add an item to the  queue\n"
